@@ -80,7 +80,7 @@
             </objects>
             <point key="canvasLocation" x="867" y="244"/>
         </scene>
-        <!--Main View Controller-->
+        <!--SavingPal-->
         <scene sceneID="Xhu-cT-PdX">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="N0h-PZ-se9" customClass="MainViewController" customModule="Jan08SavingPal" customModuleProvider="target" sceneMemberID="viewController">
@@ -89,23 +89,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Lpl-9W-8uT">
-                                <rect key="frame" x="0.0" y="88" width="414" height="32"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="61"/>
+                                <color key="backgroundColor" name="mainBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="eQn-a1-SB8"/>
+                                </constraints>
                                 <segments>
-                                    <segment title="單人"/>
-                                    <segment title="多人"/>
+                                    <segment title="單人存錢計畫"/>
+                                    <segment title="多人存錢計畫"/>
                                 </segments>
                                 <connections>
                                     <action selector="changeMode:" destination="N0h-PZ-se9" eventType="valueChanged" id="IJb-1h-BbA"/>
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dMV-c0-aZo">
-                                <rect key="frame" x="0.0" y="119" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="644"/>
                                 <connections>
                                     <segue destination="uOT-TZ-gCc" kind="embed" id="u93-1w-A0g"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVa-UK-Psx">
-                                <rect key="frame" x="0.0" y="119" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="644"/>
+                                <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="IC9-Hx-mlG" kind="embed" id="cPy-JH-nSN"/>
                                 </connections>
@@ -140,7 +145,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QZS-2S-GBS"/>
                     </view>
-                    <navigationItem key="navigationItem" id="thZ-2z-LbR">
+                    <navigationItem key="navigationItem" title="SavingPal" id="thZ-2z-LbR">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="person.circle.fill" catalog="system" id="hKR-pw-i9S">
                             <connections>
                                 <action selector="profileBtn:" destination="N0h-PZ-se9" id="CsJ-0R-AcU"/>
@@ -155,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kz9-CB-rEV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1575" y="244"/>
+            <point key="canvasLocation" x="1573.913043478261" y="243.75"/>
         </scene>
         <!--New Project View Controller-->
         <scene sceneID="Z6A-5D-Ht7">
@@ -604,7 +609,7 @@
             <objects>
                 <viewController storyboardIdentifier="DetailViewController" id="qbG-X5-2UN" customClass="DetailViewController" customModule="Jan08SavingPal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gq4-Gg-BlC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="619"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="590"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="WUN-q1-FLd">
@@ -689,7 +694,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B7k-V0-jhT" userLabel="lineBreak">
-                                <rect key="frame" x="0.0" y="308" width="414" height="3"/>
+                                <rect key="frame" x="0.0" y="293.5" width="414" height="3"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="3" id="D7J-Zl-oHo"/>
@@ -928,6 +933,45 @@
                                             <outlet property="itemName" destination="srG-Ko-Wro" id="FaF-YG-fVe"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InviteCell" id="3Ke-eV-EN1" customClass="SettingInvatationTableViewCell" customModule="Jan08SavingPal" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="71.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Ke-eV-EN1" id="Df6-Lq-bxq">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請輸入邀請碼：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiR-V7-KNf">
+                                                    <rect key="frame" x="34" y="11.5" width="346" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJw-k0-7tz">
+                                                    <rect key="frame" x="363" y="6" width="31" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="確定"/>
+                                                </button>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="obc-Gz-jjz">
+                                                    <rect key="frame" x="153.5" y="5" width="190" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eiR-V7-KNf" firstAttribute="leading" secondItem="Df6-Lq-bxq" secondAttribute="leading" constant="34" id="6Hl-aC-A3P"/>
+                                                <constraint firstItem="eiR-V7-KNf" firstAttribute="centerX" secondItem="Df6-Lq-bxq" secondAttribute="centerX" id="AeL-vW-vnC"/>
+                                                <constraint firstItem="obc-Gz-jjz" firstAttribute="centerX" secondItem="Df6-Lq-bxq" secondAttribute="centerX" multiplier="1.2" id="ZBV-RB-BeD"/>
+                                                <constraint firstItem="eiR-V7-KNf" firstAttribute="centerY" secondItem="Df6-Lq-bxq" secondAttribute="centerY" id="jgx-sj-mCd"/>
+                                                <constraint firstItem="obc-Gz-jjz" firstAttribute="centerY" secondItem="Df6-Lq-bxq" secondAttribute="centerY" id="utT-62-6q8"/>
+                                                <constraint firstItem="obc-Gz-jjz" firstAttribute="width" secondItem="Df6-Lq-bxq" secondAttribute="width" multiplier="0.458937" id="zTK-7a-ff1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="inviteBtn" destination="RJw-k0-7tz" id="cM5-CA-vUY"/>
+                                            <outlet property="inviteLabel" destination="eiR-V7-KNf" id="s1c-Tb-mt6"/>
+                                            <outlet property="inviteTextField" destination="obc-Gz-jjz" id="yDn-De-sPV"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="C0b-v2-oNg" id="SHV-QK-yge"/>
@@ -961,14 +1005,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lcn-42-Q6J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="a23-To-tyz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2341" y="-141"/>
+            <point key="canvasLocation" x="2339.130434782609" y="-141.29464285714286"/>
         </scene>
         <!--Single Table View Controller-->
         <scene sceneID="3Bj-A1-8NM">
             <objects>
                 <tableViewController id="uOT-TZ-gCc" userLabel="Single Table View Controller" customClass="SingleTableViewController" customModule="Jan08SavingPal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="y4L-za-csJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="673"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="644"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.64408392609999998" blue="0.96446124909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
@@ -1103,7 +1147,7 @@
             <objects>
                 <tableViewController id="IC9-Hx-mlG" userLabel="Muti Table View Controller" customClass="MultiTableViewController" customModule="Jan08SavingPal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="K6h-0U-9Vx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="673"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="644"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>

@@ -13,18 +13,15 @@ import GoogleSignIn
 
 class SettingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-
+    
     @IBAction func logOutBtn(_ sender: UIButton) {
-//        GIDSignIn.sharedInstance()?.signOut()
-//              let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController
-//              self.present(loginVC!, animated: true, completion: nil)
- 
+        
     }
-    var arrayUserSelf = ["個人資料"]
-       
-       var arrayEnviroment = ["推播通知"]
-       
-       var arrayAboutUs = ["意見回饋", "關於我們", "版本"]
+    var arrayUserSelf = ["請輸入邀請碼："]
+    
+    var arrayEnviroment = ["推播通知"]
+    
+    var arrayAboutUs = ["意見回饋", "關於我們", "版本"]
     
     
     @IBOutlet weak var settingTableView: UITableView!
@@ -101,7 +98,8 @@ class SettingViewController: UIViewController, UITableViewDataSource, UITableVie
         viewLabel.textColor = UIColor(named: "textGray")
         
         if section == 0{
-            viewLabel.text = "資料設定"
+            viewLabel.text = "多人存邀請碼"
+           
         }
         else if section == 1{
             viewLabel.text = "環境設定"
@@ -115,12 +113,21 @@ class SettingViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SettingTableViewCell
         
+         let inviteCell = tableView.dequeueReusableCell(withIdentifier: "InviteCell", for: indexPath) as! SettingInvatationTableViewCell
         
         if(indexPath.section == 0){
-            cell.itemName.text = arrayUserSelf[indexPath.row]
+            inviteCell.inviteLabel.text = arrayUserSelf[indexPath.row]
+//            inviteCell.inviteTextField.text
+//            inviteCell.inviteBtn
+            //cell.itemName.text = arrayUserSelf[indexPath.row]
+            
+            
             //           cell.accessoryType = checknumbers[indexPath.row] ? .checkmark: .none
+            return inviteCell
+            
         }
         else if indexPath.section == 1{
             cell.itemName.text = arrayEnviroment[indexPath.row]
@@ -136,11 +143,11 @@ class SettingViewController: UIViewController, UITableViewDataSource, UITableVie
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        performSegue(withIdentifier: "setting_to_modify", sender: arrayUserSelf[0])
-//        
-//    }
+    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+    //        tableView.deselectRow(at: indexPath, animated: true)
+    //        performSegue(withIdentifier: "setting_to_modify", sender: arrayUserSelf[0])
+    //
+    //    }
     
     
 }

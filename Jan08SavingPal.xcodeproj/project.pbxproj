@@ -33,6 +33,7 @@
 		CE03A47C23C8250900DA30C4 /* MultiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03A47B23C8250900DA30C4 /* MultiTableViewController.swift */; };
 		CE0AACF823CB4785001D665A /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AACF723CB4785001D665A /* Global.swift */; };
 		CE0AACFA23CB5C33001D665A /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AACF923CB5C33001D665A /* SettingTableViewCell.swift */; };
+		CEF977B823D04B45004BB2BB /* SettingInvatationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF977B723D04B45004BB2BB /* SettingInvatationTableViewCell.swift */; };
 		CEFEEE8E23C5FB510014DAEF /* NetWorkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFEEE8D23C5FB510014DAEF /* NetWorkController.swift */; };
 		CEFEEE9023C5FB680014DAEF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFEEE8F23C5FB680014DAEF /* UserModel.swift */; };
 /* End PBXBuildFile section */
@@ -90,6 +91,7 @@
 		CE03A47B23C8250900DA30C4 /* MultiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTableViewController.swift; sourceTree = "<group>"; };
 		CE0AACF723CB4785001D665A /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		CE0AACF923CB5C33001D665A /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		CEF977B723D04B45004BB2BB /* SettingInvatationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingInvatationTableViewCell.swift; sourceTree = "<group>"; };
 		CEFEEE8D23C5FB510014DAEF /* NetWorkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkController.swift; sourceTree = "<group>"; };
 		CEFEEE8F23C5FB680014DAEF /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E038D029AE7A19F3459EB5B8 /* Pods-Jan08SavingPal-Jan08SavingPalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jan08SavingPal-Jan08SavingPalUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jan08SavingPal-Jan08SavingPalUITests/Pods-Jan08SavingPal-Jan08SavingPalUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			children = (
 				CE02357F23C5E1A40069751D /* SettingViewController.swift */,
 				CE0AACF923CB5C33001D665A /* SettingTableViewCell.swift */,
+				CEF977B723D04B45004BB2BB /* SettingInvatationTableViewCell.swift */,
 			);
 			path = MamberAndSetting;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				CE03A47C23C8250900DA30C4 /* MultiTableViewController.swift in Sources */,
 				CEFEEE8E23C5FB510014DAEF /* NetWorkController.swift in Sources */,
 				CE0AACFA23CB5C33001D665A /* SettingTableViewCell.swift in Sources */,
+				CEF977B823D04B45004BB2BB /* SettingInvatationTableViewCell.swift in Sources */,
 				CE02354823C5BD480069751D /* ViewController.swift in Sources */,
 				CEFEEE9023C5FB680014DAEF /* UserModel.swift in Sources */,
 				CE03A47623C76F4F00DA30C4 /* SingleTableViewCell.swift in Sources */,

@@ -15,7 +15,15 @@ class MainViewController: UIViewController {
     //singleTableView
     let projectName = ["AAAAA","BBBBB","CCCCC","DDDDD","EEEEEE"]
     //singleTableView
-    
+    @IBAction func changeMode(_ sender: UISegmentedControl) {
+           if sender.selectedSegmentIndex == 0 {
+               containerViews[0].isHidden = false
+               containerViews[1].isHidden = true
+           } else {
+               containerViews[0].isHidden = true
+               containerViews[1].isHidden = false
+           }
+       }
     
     //var userModel:UserModel?
     
@@ -35,6 +43,9 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //切換TableView
+        
+     
+        
         containerViews[0].isHidden = false
         containerViews[1].isHidden = true
         navigationController?.navigationBar.isHidden = false
@@ -94,15 +105,7 @@ class MainViewController: UIViewController {
         self.present(loginVC!, animated: true, completion: nil)
     }
     
-    @IBAction func changeMode(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
-            containerViews[0].isHidden = false
-            containerViews[1].isHidden = true
-        } else {
-            containerViews[0].isHidden = true
-            containerViews[1].isHidden = false
-        }
-    } 
+   
     
     //用程式碼換頁 到一人或多人 帶資料 //傳ID
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
