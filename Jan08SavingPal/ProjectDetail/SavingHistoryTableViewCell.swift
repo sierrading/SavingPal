@@ -15,6 +15,7 @@ class SavingHistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var saveTag: UILabel!
     @IBOutlet weak var newProject: UILabel!
     @IBOutlet weak var date: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

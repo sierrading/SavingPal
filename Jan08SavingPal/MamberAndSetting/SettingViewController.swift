@@ -13,11 +13,12 @@ import GoogleSignIn
 
 class SettingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
+    //登出鍵
     @IBAction func logOutBtn(_ sender: UIButton) {
         
     }
-    var arrayUserSelf = ["請輸入邀請碼："]
+    
+    var arrayUserSelf = ["邀請碼"]
     
     var arrayEnviroment = ["推播通知"]
     

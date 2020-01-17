@@ -12,10 +12,11 @@ import GoogleSignIn
 
 class MainViewController: UIViewController {
     
-    //singleTableView
-    let projectName = ["AAAAA","BBBBB","CCCCC","DDDDD","EEEEEE"]
-    //singleTableView
+//    //singleTableView
+//    let projectName = ["AAAAA","BBBBB","CCCCC","DDDDD","EEEEEE"]
+//    //singleTableView
     @IBAction func changeMode(_ sender: UISegmentedControl) {
+        
            if sender.selectedSegmentIndex == 0 {
                containerViews[0].isHidden = false
                containerViews[1].isHidden = true

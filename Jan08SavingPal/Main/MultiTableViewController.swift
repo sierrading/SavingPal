@@ -52,7 +52,7 @@ class MultiTableViewController: UITableViewController {
         if let cell = sender.view?.superview?.superview as? UITableViewCell,  let row = tableView.indexPath(for: cell)?.row {
            
             let project = projects[row]
-            let controller = UIAlertController(title: "dd", message: "請輸入你要給 peter 的錢", preferredStyle: .alert)
+            let controller = UIAlertController(title: "dd", message: "請輸入你要存的錢", preferredStyle: .alert)
             controller.addTextField { (textField) in
                textField.placeholder = "Money"
                 textField.text = "\(project.frequencySaveMoney())"
@@ -97,7 +97,26 @@ class MultiTableViewController: UITableViewController {
             cell.nextSaveView.removeGestureRecognizer(gesture)
         }
         cell.nextSaveView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(saveMoney(_:))))
+        cell.addMember.addTarget(self, action: #selector(self.buttonClick), for: .touchUpInside)
         return cell
+    }
+    
+    @objc func buttonClick(){
+        let controller = UIAlertController(title: "邀請朋友", message: "專案名稱：", preferredStyle: .alert)
+        controller.addTextField { (textField) in
+           textField.placeholder = "邀請碼"
+           
+        }
+       
+        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+           let phone = controller.textFields?[0].text
+          
+          
+        }
+        controller.addAction(okAction)
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        controller.addAction(cancelAction)
+        present(controller, animated: true, completion: nil)
     }
     
 

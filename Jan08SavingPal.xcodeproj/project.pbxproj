@@ -26,7 +26,6 @@
 		CE02A81C23CDD9E900B4451C /* SingleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02A81B23CDD9E900B4451C /* SingleTableViewController.swift */; };
 		CE02A81E23CDDBEF00B4451C /* SavingHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02A81D23CDDBEF00B4451C /* SavingHistoryTableViewController.swift */; };
 		CE03A46A23C6527800DA30C4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03A46923C6527800DA30C4 /* DetailViewController.swift */; };
-		CE03A46C23C7473300DA30C4 /* MainControllerTableViewSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03A46B23C7473300DA30C4 /* MainControllerTableViewSingle.swift */; };
 		CE03A47623C76F4F00DA30C4 /* SingleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03A47523C76F4F00DA30C4 /* SingleTableViewCell.swift */; };
 		CE03A47823C7747900DA30C4 /* MutiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03A47723C7747900DA30C4 /* MutiTableViewCell.swift */; };
 		CE03A47A23C785A300DA30C4 /* ProjectModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03A47923C785A300DA30C4 /* ProjectModal.swift */; };
@@ -84,7 +83,6 @@
 		CE02A81B23CDD9E900B4451C /* SingleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTableViewController.swift; sourceTree = "<group>"; };
 		CE02A81D23CDDBEF00B4451C /* SavingHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingHistoryTableViewController.swift; sourceTree = "<group>"; };
 		CE03A46923C6527800DA30C4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		CE03A46B23C7473300DA30C4 /* MainControllerTableViewSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainControllerTableViewSingle.swift; sourceTree = "<group>"; };
 		CE03A47523C76F4F00DA30C4 /* SingleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTableViewCell.swift; sourceTree = "<group>"; };
 		CE03A47723C7747900DA30C4 /* MutiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutiTableViewCell.swift; sourceTree = "<group>"; };
 		CE03A47923C785A300DA30C4 /* ProjectModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModal.swift; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				CE02357523C5CC8B0069751D /* MainViewController.swift */,
-				CE03A46B23C7473300DA30C4 /* MainControllerTableViewSingle.swift */,
 				CE03A47B23C8250900DA30C4 /* MultiTableViewController.swift */,
 				CE03A47523C76F4F00DA30C4 /* SingleTableViewCell.swift */,
 				CE03A47723C7747900DA30C4 /* MutiTableViewCell.swift */,
@@ -573,7 +570,6 @@
 				CE03A47623C76F4F00DA30C4 /* SingleTableViewCell.swift in Sources */,
 				CE02358223C5E3E10069751D /* NewProjectViewController.swift in Sources */,
 				CE02354423C5BD480069751D /* AppDelegate.swift in Sources */,
-				CE03A46C23C7473300DA30C4 /* MainControllerTableViewSingle.swift in Sources */,
 				CE02354623C5BD480069751D /* SceneDelegate.swift in Sources */,
 				CE02A81A23CDD7FB00B4451C /* SavingHistoryTableViewCell.swift in Sources */,
 				CE02358023C5E1A40069751D /* SettingViewController.swift in Sources */,

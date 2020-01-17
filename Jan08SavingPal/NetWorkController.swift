@@ -16,9 +16,7 @@ class NetWorkController: NSObject {
     
     // 單例
     static let sharedInstance = NetWorkController()
-    
     var alamofireManager:Alamofire.SessionManager!
-    
     fileprivate override init() {
         // 初始化
         let configuration = URLSessionConfiguration.default
@@ -30,7 +28,6 @@ class NetWorkController: NSObject {
     
     
     func connectApiByPost(api : String,token : String,params : Dictionary<String, Any>, callBack:((JSON) -> ())?){
-        
         alamofireManager.request(NetWorkController.rootUrl + api, method: .post, parameters: params, encoding: JSONEncoding.default, headers: ["Authorization":"Bearer " + token])
             .validate(statusCode: 200 ..< 500).responseJSON
             {
@@ -98,11 +95,8 @@ class NetWorkController: NSObject {
             request.httpMethod = "POST"
             let postString = "project_id=\(projectId)&history_date=\(date)&money=\(money)"
             let postData = postString.data(using: .utf8)
-            
             URLSession.shared.uploadTask(with: request, from: postData) { (data, response, error) in
-                
                 if let data = data {
-                    
                     
                     print(String(data: data, encoding: .utf8))
                     let decoder = JSONDecoder()
@@ -132,44 +126,44 @@ class NetWorkController: NSObject {
     }
     
     func getHistories(projectId: Int, completionHandler: @escaping (History?)->() ) {
-           if let me = UserModel.me, let url = URL(string: NetWorkController.rootUrl)?.appendingPathComponent("histories/\(me.userId!)/\(projectId)") {
-               
-               var request = URLRequest(url: url)
-               request.setValue("Bearer " + me.token!, forHTTPHeaderField: "Authorization")
-               
-               
-               URLSession.shared.dataTask(with: request) { (data, response, error) in
-                   if let data = data {
-                       
-                       
-                       print(String(data: data, encoding: .utf8))
-                       let decoder = JSONDecoder()
-                       decoder.keyDecodingStrategy = .convertFromSnakeCase
-                       
-                                           do {
-                                               try decoder.decode(HistoryData.self, from: data)
-                                           } catch {
-                                               print(error)
-                                           }
-                       
-                       if let historyData = try? decoder.decode(HistoryData.self, from: data) {
+        if let me = UserModel.me, let url = URL(string: NetWorkController.rootUrl)?.appendingPathComponent("histories/\(me.userId!)/\(projectId)") {
+            
+            var request = URLRequest(url: url)
+            request.setValue("Bearer " + me.token!, forHTTPHeaderField: "Authorization")
+            
+            
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                if let data = data {
+                    
+                    
+                    print(String(data: data, encoding: .utf8))
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    
+                    do {
+                        try decoder.decode(HistoryData.self, from: data)
+                    } catch {
+                        print(error)
+                    }
+                    
+                    if let historyData = try? decoder.decode(HistoryData.self, from: data) {
                         completionHandler(historyData.data)
-                           
-                       } else {
-                           print("parse error")
-                           completionHandler(nil)
-                           
-                       }
-                       
-                   } else {
-                       completionHandler(nil)
-                   }
-               }.resume()
-               
-           }
-           
-       }
-       
+                        
+                    } else {
+                        print("parse error")
+                        completionHandler(nil)
+                        
+                    }
+                    
+                } else {
+                    completionHandler(nil)
+                }
+            }.resume()
+            
+        }
+        
+    }
+    
     
     func getProjects(completionHandler: @escaping ([ProjectModal]?)->() ) {
         if let me = UserModel.me, let url = URL(string: NetWorkController.rootUrl)?.appendingPathComponent("projects/\(me.userId!)") {
